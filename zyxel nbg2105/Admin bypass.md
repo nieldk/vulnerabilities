@@ -15,7 +15,7 @@ This can be abused to gain access to the routers administration page, without lo
 The part of the javacode exposing this check is shown below where it checks this value by the statement "if(login != 1)":
 Any other cookie content than "1" will return to the router login page.
 
-```java
+```javascript
 function checkCookie()
 {
         var login=0;
@@ -43,7 +43,7 @@ located at  http://router-IP/login_ok.htm which will set the cookie "login" to "
 
 This can be observed in the below code from util_gw.js
 
-```java
+```javascript
 function setCookie() //login_ok.htm use
 {
         document.cookie="login=1";
