@@ -15,15 +15,38 @@ This can be abused to gain access to the routers administration page, without lo
 The part of the javacode exposing this check is shown below where it checks this value by the statement "if(login != 1)":
 Any other cookie content than "1" will return to the router login page.
 
-```
+```java
 function checkCookie()
 {
-	.
-	
-	if(login != 1)
-		MM_goToURL('parent', 'login.htm');
+        var login=0;
+        if(document.cookie.length > 0)
+        {
+                var first = document.cookie.indexOf("login=");
+                var second = document.cookie.indexOf(";", first);
+                if(first != -1)
+                {
+                        if(second == -1)
+                                login = document.cookie.substring(first+6);
+                        else
+                                login = document.cookie.substring(first+6, second);
+                }
+        }
+
+        if(login != 1)
+                MM_goToURL('parent', 'login.htm');
 }
+
 ```
 
 Furthermore, it is possible to bypass the login, by calling the static web page, 
 located at  http://router-IP/login_ok.htm which will set the cookie "login" to "1" and thus bypass the login credentials check.
+
+This can be observed in the below code from util_gw.js
+
+```java
+function setCookie() //login_ok.htm use
+{
+        document.cookie="login=1";
+        MM_goToURL('parent', 'home.htm');
+}
+```
