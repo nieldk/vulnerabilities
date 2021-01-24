@@ -1,4 +1,7 @@
 # NBG2105 Mini Travel Router
+## Local admin bypass
+
+![Local admin bypass](https://www.zyxel.com/uploads/images/img_ngb2105_p_380.jpg)
 
 The NBG2105 is a Wireless Mini Travel Router by ZyXel, information and downloads can be found here https://www.zyxel.com/support/SupportLandingSR.shtml?c=gb&l=en&kbid=M-01490&md=NBG2105
 
