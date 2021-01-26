@@ -1,7 +1,5 @@
-# NBG2105 Mini Travel Router
-## Local admin bypass
-
-![Local admin bypass](https://www.zyxel.com/uploads/images/img_ngb2105_p_380.jpg)
+NBG2105 Mini Travel Router
+Local admin bypass
 
 The NBG2105 is a Wireless Mini Travel Router by ZyXel, information and downloads can be found here https://www.zyxel.com/support/SupportLandingSR.shtml?c=gb&l=en&kbid=M-01490&md=NBG2105
 
@@ -15,7 +13,6 @@ This can be abused to gain access to the routers administration page, without lo
 The part of the javacode exposing this check is shown below where it checks this value by the statement "if(login != 1)":
 Any other cookie content than "1" will return to the router login page.
 
-```javascript
 function checkCookie()
 {
         var login=0;
@@ -36,23 +33,18 @@ function checkCookie()
                 MM_goToURL('parent', 'login.htm');
 }
 
-```
 
 Furthermore, it is possible to bypass the login, by calling the static web page, 
 located at  http://router-IP/login_ok.htm which will set the cookie "login" to "1" and thus bypass the login credentials check.
 
 This can be observed in the below code from util_gw.js
 
-```javascript
 function setCookie() //login_ok.htm use
 {
         document.cookie="login=1";
         MM_goToURL('parent', 'home.htm');
 }
-```
 
 Timeline
-
 24. Jan 2021 reported to Zyxel
-
 25. Jan 2021 Zyxel confirm recieved report
