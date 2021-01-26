@@ -52,5 +52,7 @@ function setCookie() //login_ok.htm use
 ```
 
 Timeline
+
 24. Jan 2021 reported to Zyxel
+
 25. Jan 2021 Zyxel confirm recieved report
