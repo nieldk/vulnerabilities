@@ -1,6 +1,8 @@
 NBG2105 Mini Travel Router
 Local admin bypass
 
+CVE-2021-3297
+
 The NBG2105 is a Wireless Mini Travel Router by ZyXel, information and downloads can be found here https://www.zyxel.com/support/SupportLandingSR.shtml?c=gb&l=en&kbid=M-01490&md=NBG2105
 
 I discovered a vulnerability, which allows anyone to access to routers administrative configuration pages.
